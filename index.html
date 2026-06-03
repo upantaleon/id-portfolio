@@ -1,0 +1,964 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Umar Pantaleon Umangay | Instructional Designer Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --ink:#1a1a18;
+  --ink2:#4a4a46;
+  --ink3:#8a8a84;
+  --paper:#faf9f6;
+  --paper2:#f2f0eb;
+  --paper3:#e8e5de;
+  --accent:#2e4a3e;
+  --accent2:#4a7c6a;
+  --accent-light:#e8f0ec;
+  --rule:#d8d5ce;
+  --purple-fill:#eeecfd;
+  --purple-text:#3c3489;
+  --purple-border:#afa9ec;
+  --teal-fill:#e0f4ec;
+  --teal-text:#085041;
+  --teal-border:#5dcaa5;
+  --coral-fill:#faece7;
+  --coral-text:#712b13;
+  --coral-border:#f0997b;
+  --gray-fill:#f1efe8;
+  --gray-text:#444441;
+  --gray-border:#b4b2a9;
+  --info-fill:#e6f1fb;
+  --info-text:#0c447c;
+  --r-md:6px;
+  --r-lg:10px;
+}
+html{scroll-behavior:smooth;}
+body{
+  font-family:'DM Sans',system-ui,sans-serif;
+  background:var(--paper);
+  color:var(--ink);
+  font-size:15px;
+  line-height:1.65;
+}
+
+/* LAYOUT */
+.wrap{max-width:900px;margin:0 auto;padding:0 1.5rem;}
+
+/* HEADER */
+header{
+  background:var(--accent);
+  padding:3rem 0 2rem;
+  position:relative;
+  overflow:hidden;
+}
+header::before{
+  content:'';
+  position:absolute;
+  top:-60px;right:-80px;
+  width:320px;height:320px;
+  border-radius:50%;
+  background:rgba(255,255,255,0.04);
+}
+header::after{
+  content:'';
+  position:absolute;
+  bottom:-40px;left:40px;
+  width:180px;height:180px;
+  border-radius:50%;
+  background:rgba(255,255,255,0.03);
+}
+.header-inner{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+  flex-wrap:wrap;
+  gap:1.5rem;
+  position:relative;
+  z-index:1;
+}
+.header-name{
+  font-family:'DM Serif Display',Georgia,serif;
+  font-size:2.6rem;
+  color:#fff;
+  line-height:1.1;
+  letter-spacing:-0.01em;
+}
+.header-title{
+  font-size:0.9rem;
+  color:rgba(255,255,255,0.7);
+  margin-top:0.4rem;
+  letter-spacing:0.02em;
+  font-weight:300;
+}
+.header-meta{
+  text-align:right;
+  font-size:0.8rem;
+  color:rgba(255,255,255,0.6);
+  line-height:1.9;
+}
+.header-meta strong{
+  color:rgba(255,255,255,0.9);
+  font-weight:400;
+}
+.competition-badge{
+  display:inline-block;
+  background:rgba(255,255,255,0.12);
+  border:1px solid rgba(255,255,255,0.2);
+  color:rgba(255,255,255,0.85);
+  font-size:0.75rem;
+  padding:4px 12px;
+  border-radius:99px;
+  margin-top:1rem;
+  letter-spacing:0.03em;
+}
+.tagline{
+  margin-top:1.5rem;
+  padding-top:1.5rem;
+  border-top:1px solid rgba(255,255,255,0.15);
+  font-size:0.9rem;
+  color:rgba(255,255,255,0.75);
+  line-height:1.7;
+  font-style:italic;
+  position:relative;
+  z-index:1;
+}
+
+/* NAV */
+nav{
+  background:var(--paper2);
+  border-bottom:1px solid var(--rule);
+  position:sticky;
+  top:0;
+  z-index:100;
+}
+.nav-inner{
+  display:flex;
+  overflow-x:auto;
+  gap:0;
+  scrollbar-width:none;
+}
+.nav-inner::-webkit-scrollbar{display:none;}
+.nav-btn{
+  background:none;
+  border:none;
+  border-bottom:2px solid transparent;
+  padding:0.85rem 1.1rem;
+  font-family:'DM Sans',sans-serif;
+  font-size:0.82rem;
+  font-weight:400;
+  color:var(--ink3);
+  cursor:pointer;
+  white-space:nowrap;
+  transition:color 0.15s, border-color 0.15s;
+  letter-spacing:0.01em;
+}
+.nav-btn:hover{color:var(--ink2);}
+.nav-btn.active{
+  color:var(--accent);
+  font-weight:500;
+  border-bottom-color:var(--accent);
+}
+
+/* SECTIONS */
+.section{display:none;padding:2.5rem 0 4rem;}
+.section.active{display:block;}
+
+.section-header{margin-bottom:2rem;}
+.section-title{
+  font-family:'DM Serif Display',Georgia,serif;
+  font-size:1.6rem;
+  color:var(--ink);
+  line-height:1.2;
+  margin-bottom:0.3rem;
+}
+.section-sub{font-size:0.85rem;color:var(--ink3);}
+.interview-tag{
+  display:inline-block;
+  background:var(--info-fill);
+  color:var(--info-text);
+  font-size:0.72rem;
+  padding:2px 9px;
+  border-radius:99px;
+  border:1px solid #b5d4f4;
+  margin-left:10px;
+  vertical-align:middle;
+  font-weight:500;
+}
+
+/* CARDS */
+.card{
+  background:#fff;
+  border:1px solid var(--rule);
+  border-radius:var(--r-lg);
+  padding:1.4rem 1.5rem;
+  margin-bottom:1rem;
+}
+.card-title{
+  font-size:0.9rem;
+  font-weight:500;
+  color:var(--ink);
+  margin-bottom:0.6rem;
+  padding-bottom:0.5rem;
+  border-bottom:1px solid var(--paper3);
+}
+.card-body{font-size:0.88rem;color:var(--ink2);line-height:1.7;}
+.card-body p{margin-bottom:0.65rem;}
+.card-body p:last-child{margin-bottom:0;}
+
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+@media(max-width:600px){.two-col{grid-template-columns:1fr;}}
+
+/* TABLES */
+.tbl-wrap{overflow-x:auto;margin-top:0.5rem;}
+table{width:100%;border-collapse:collapse;font-size:0.83rem;}
+th{
+  text-align:left;
+  font-weight:500;
+  font-size:0.76rem;
+  color:var(--ink3);
+  padding:7px 10px;
+  border-bottom:1px solid var(--rule);
+  background:var(--paper2);
+  letter-spacing:0.02em;
+}
+td{
+  padding:8px 10px;
+  border-bottom:1px solid var(--paper3);
+  vertical-align:top;
+  line-height:1.5;
+}
+tr:last-child td{border-bottom:none;}
+.hl-row td{background:var(--info-fill);color:var(--info-text);font-weight:500;}
+
+/* DL ROWS */
+.dl-row{
+  display:grid;
+  grid-template-columns:140px 1fr;
+  gap:10px;
+  padding:9px 0;
+  border-bottom:1px solid var(--paper3);
+  font-size:0.87rem;
+}
+.dl-row:last-child{border-bottom:none;}
+.dl-key{font-weight:500;color:var(--ink);}
+.dl-val{color:var(--ink2);}
+
+/* ROLE ROWS */
+.role{
+  padding:0.9rem 0;
+  border-bottom:1px solid var(--paper3);
+}
+.role:last-child{border-bottom:none;}
+.role-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:baseline;
+  flex-wrap:wrap;
+  gap:6px;
+  margin-bottom:3px;
+}
+.role-title{font-weight:500;font-size:0.9rem;}
+.role-org{font-size:0.85rem;color:var(--ink3);}
+.role-date{font-size:0.8rem;color:var(--ink3);}
+.role-body{font-size:0.84rem;color:var(--ink2);line-height:1.6;}
+
+/* PILLS */
+.pill{
+  display:inline-block;
+  font-size:0.73rem;
+  padding:2px 9px;
+  border-radius:99px;
+  margin:2px;
+  border:1px solid var(--rule);
+  color:var(--ink3);
+}
+.pill-purple{background:var(--purple-fill);color:var(--purple-text);border-color:var(--purple-border);}
+.pill-teal{background:var(--teal-fill);color:var(--teal-text);border-color:var(--teal-border);}
+.pill-coral{background:var(--coral-fill);color:var(--coral-text);border-color:var(--coral-border);}
+.pill-gray{background:var(--gray-fill);color:var(--gray-text);border-color:var(--gray-border);}
+.pill-info{background:var(--info-fill);color:var(--info-text);border-color:#b5d4f4;}
+
+/* BLOCKQUOTE */
+.bq{
+  border-left:3px solid var(--accent2);
+  padding:0.75rem 1rem;
+  margin:0.85rem 0;
+  font-size:0.87rem;
+  color:var(--ink2);
+  line-height:1.7;
+  font-style:italic;
+  background:var(--accent-light);
+  border-radius:0 var(--r-md) var(--r-md) 0;
+}
+
+/* COMPETENCY GRID */
+.comp-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+  gap:10px;
+  margin-top:0.75rem;
+}
+.comp-card{
+  background:var(--paper2);
+  border:1px solid var(--rule);
+  border-radius:var(--r-md);
+  padding:0.9rem 1rem;
+}
+.comp-label{font-weight:500;font-size:0.85rem;margin-bottom:3px;}
+.comp-desc{font-size:0.78rem;color:var(--ink3);line-height:1.5;}
+
+/* OUTCOME BADGES */
+.outcome-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:1.25rem;}
+@media(max-width:500px){.outcome-grid{grid-template-columns:1fr;}}
+.outcome-card{border-radius:var(--r-lg);padding:1rem 1.1rem;}
+.outcome-card.purple{background:var(--purple-fill);border:1px solid var(--purple-border);}
+.outcome-card.teal{background:var(--teal-fill);border:1px solid var(--teal-border);}
+.outcome-card.coral{background:var(--coral-fill);border:1px solid var(--coral-border);}
+.outcome-card .oc-title{font-weight:500;font-size:0.87rem;margin-bottom:3px;}
+.outcome-card.purple .oc-title{color:var(--purple-text);}
+.outcome-card.teal .oc-title{color:var(--teal-text);}
+.outcome-card.coral .oc-title{color:var(--coral-text);}
+.outcome-card .oc-sub{font-size:0.78rem;}
+.outcome-card.purple .oc-sub{color:#534ab7;}
+.outcome-card.teal .oc-sub{color:#0f6e56;}
+.outcome-card.coral .oc-sub{color:#993c1d;}
+
+/* WEEK CARDS */
+.week-list{display:flex;flex-direction:column;gap:6px;}
+.week-card{
+  display:grid;
+  grid-template-columns:64px 1fr 48px;
+  align-items:center;
+  gap:10px;
+  padding:10px 14px;
+  border-radius:var(--r-md);
+  border:1px solid var(--rule);
+  background:#fff;
+  font-size:0.85rem;
+}
+.week-card.purple{border-left:3px solid var(--purple-border);background:var(--purple-fill);}
+.week-card.teal{border-left:3px solid var(--teal-border);background:var(--teal-fill);}
+.week-card.coral{border-left:3px solid var(--coral-border);background:var(--coral-fill);}
+.week-card.final{border-left:3px solid var(--accent2);background:var(--accent-light);}
+.week-card.neutral{border-left:3px solid var(--rule);}
+.week-num{font-weight:500;font-size:0.78rem;color:var(--ink3);}
+.week-title{font-weight:500;}
+.week-sub{font-size:0.78rem;color:var(--ink3);}
+.week-weight{font-weight:500;text-align:right;font-size:0.87rem;}
+
+/* INTERVIEW INDEX */
+.q-card{
+  background:#fff;
+  border:1px solid var(--rule);
+  border-radius:var(--r-md);
+  padding:1rem 1.25rem;
+  margin-bottom:0.65rem;
+}
+.q-label{font-size:0.72rem;color:var(--ink3);margin-bottom:4px;font-weight:500;letter-spacing:0.04em;text-transform:uppercase;}
+.q-text{font-weight:500;font-size:0.9rem;margin-bottom:6px;}
+.q-ref{font-size:0.84rem;color:var(--ink2);line-height:1.6;}
+
+/* FOOTER */
+footer{
+  background:var(--accent);
+  padding:2rem 0;
+  text-align:center;
+  font-size:0.8rem;
+  color:rgba(255,255,255,0.55);
+}
+footer strong{color:rgba(255,255,255,0.8);font-weight:400;}
+
+/* PRINT */
+@media print{
+  nav,footer{display:none;}
+  .section{display:block!important;page-break-after:always;}
+  header{background:#1a1a18!important;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="header-inner">
+      <div>
+        <div class="header-name">Umar Pantaleon Umangay</div>
+        <div class="header-title">PhD (Social Justice Education, OISE) &nbsp;&middot;&nbsp; Ontario College of Teachers &nbsp;&middot;&nbsp; Pantaleon Consulting</div>
+        <div><span class="competition-badge">Competition J0326-0741 &mdash; Instructional Designer, Continuing Teacher Education, Queen's University</span></div>
+      </div>
+      <div class="header-meta">
+        umar.umangay@alumni.utoronto.ca<br>
+        Amherstview, ON, Canada<br>
+        <strong>June 11, 2026</strong>
+      </div>
+    </div>
+    <div class="tagline">Instructional design practice grounded in backward design, structural equity, and genuine SME collaboration. Prior appointment at Queen's (2019&ndash;2021). Thirty years across Ontario, Australia, and the Philippines.</div>
+  </div>
+</header>
+
+<nav>
+  <div class="wrap nav-inner">
+    <button class="nav-btn active" onclick="show('profile')">Profile</button>
+    <button class="nav-btn" onclick="show('course')">Course Design</button>
+    <button class="nav-btn" onclick="show('assessment')">Assessment</button>
+    <button class="nav-btn" onclick="show('curriculum')">Curriculum Map</button>
+    <button class="nav-btn" onclick="show('edaii')">EDAII</button>
+    <button class="nav-btn" onclick="show('writing')">Writing</button>
+    <button class="nav-btn" onclick="show('interview')">Interview Index</button>
+  </div>
+</nav>
+
+<!-- ===== PROFILE ===== -->
+<div id="profile" class="section active">
+<div class="wrap">
+  <div class="section-header">
+    <div class="section-title">Professional profile <span class="interview-tag">Q1 &mdash; tell us about yourself</span></div>
+    <div class="section-sub">Qualifications, positioning, and prior Queen's appointment</div>
+  </div>
+
+  <div class="two-col">
+    <div class="card">
+      <div class="card-title">Positioning statement</div>
+      <div class="card-body">
+        <p>My instructional design practice is grounded in three principles. Design begins with the learner, not the content: outcomes, assessments, and activities are sequenced to build the specific capacities learners need. Equity is structural: it shapes what gets assessed, how it gets assessed, and whose knowledge is represented. Collaboration with subject matter experts requires a design relationship, not a content handoff.</p>
+        <p>This practice spans Queen's University, OISE, Charles Sturt University, First Nations Technical Institute, and Six Nations Polytechnic across Ontario, Australia, and the Philippines.</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">Core qualifications</div>
+      <div class="card-body">
+        <div class="dl-row"><div class="dl-key">Doctoral credential</div><div class="dl-val">PhD, Social Justice Education, OISE, University of Toronto (2025)</div></div>
+        <div class="dl-row"><div class="dl-key">Professional cert</div><div class="dl-val">Ontario College of Teachers (OCT)</div></div>
+        <div class="dl-row"><div class="dl-key">Experience</div><div class="dl-val">30+ years across postsecondary, Indigenous, and teacher education</div></div>
+        <div class="dl-row"><div class="dl-key">Prior at Queen's</div><div class="dl-val">STEM Outreach Coordinator, NSERC Indigenous STEM project, 2019&ndash;2021</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Career trajectory relevant to this role</div>
+    <div class="card-body">
+      <div class="role">
+        <div class="role-top"><span class="role-title">STEM Outreach Coordinator</span><span class="role-org">Queen's University</span><span class="role-date">2019&ndash;2021</span></div>
+        <div class="role-body">NSERC-funded Indigenous STEM curriculum co-design with engineering faculty and First Nations community partners. Managed multi-stakeholder review cycles across faculty, Elders, and community partners.</div>
+      </div>
+      <div class="role">
+        <div class="role-top"><span class="role-title">Independent Consultant / Instructional Designer</span><span class="role-org">Pantaleon Consulting</span><span class="role-date">2019&ndash;present</span></div>
+        <div class="role-body">Designed EDUC 6420 (7-week graduate course, Canvas LMS, OCAP-integrated tech evaluation). Developed Canvas Course Analytics Workshop Package for instructional designers (5 modules, asynchronous, TLCP-mapped). Authored AI-Resistant Assignment Design handbook for continuing teacher education.</div>
+      </div>
+      <div class="role">
+        <div class="role-top"><span class="role-title">Lecturer, Teacher Education</span><span class="role-org">Charles Sturt University</span><span class="role-date">2011&ndash;2015</span></div>
+        <div class="role-body">Designed and coordinated multiple subjects from scratch using backward design against NSW teacher accreditation framework. Redesigned Professional Practice assessment following three-source data analysis; subsequent cohort showed measurably stronger supervisor ratings. Academic Excellence in Research Award, 2014.</div>
+      </div>
+      <div class="role">
+        <div class="role-top"><span class="role-title">Vice President Academic</span><span class="role-org">First Nations Technical Institute</span><span class="role-date">2018&ndash;2019</span></div>
+        <div class="role-body">Program oversight, faculty development, quality assurance, and external accreditation compliance across multiple certificates and degree programs. Introduced milestone-based project tracking; all external accreditation deadlines met.</div>
+      </div>
+      <div class="role">
+        <div class="role-top"><span class="role-title">BEd Program Lead / Instructor</span><span class="role-org">Six Nations Polytechnic</span><span class="role-date">Various</span></div>
+        <div class="role-body">Indigenous teacher education content through community co-authorship model.</div>
+      </div>
+      <div class="role">
+        <div class="role-top"><span class="role-title">Sessional Instructor</span><span class="role-org">OISE, University of Toronto</span><span class="role-date">Various</span></div>
+        <div class="role-body">Graduate-level course design and delivery in social justice education, decolonial curriculum, and UDL.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Design competencies</div>
+    <div class="comp-grid">
+      <div class="comp-card"><div class="comp-label">Backward design</div><div class="comp-desc">Outcomes first, then assessment, then activities</div></div>
+      <div class="comp-card"><div class="comp-label">UDL 3.0 / AODA</div><div class="comp-desc">Structural, not decorative; auditable disclosure</div></div>
+      <div class="comp-card"><div class="comp-label">EDAII</div><div class="comp-desc">Indigenous, anti-racist, and decolonial design criteria</div></div>
+      <div class="comp-card"><div class="comp-label">SME collaboration</div><div class="comp-desc">Co-design model; bridges disciplinary and pedagogical knowledge</div></div>
+      <div class="comp-card"><div class="comp-label">LMS analytics</div><div class="comp-desc">Canvas (designer-level), Brightspace/D2L, Blackboard</div></div>
+      <div class="comp-card"><div class="comp-label">Assessment design</div><div class="comp-desc">Rubrics, scaffolding, AI-resistant task design</div></div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ===== COURSE DESIGN ===== -->
+<div id="course" class="section">
+<div class="wrap">
+  <div class="section-header">
+    <div class="section-title">Course design samples <span class="interview-tag">Q2 &mdash; end-to-end project</span></div>
+    <div class="section-sub">EDUC 6420 and Canvas Analytics Workshop Package</div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">EDUC 6420 &mdash; project snapshot</div>
+    <div class="card-body">
+      <div class="tbl-wrap">
+        <table>
+          <tr><td style="width:120px;font-weight:500;">Role</td><td>Instructional Designer, Curriculum Developer, Course Architect</td></tr>
+          <tr><td style="font-weight:500;">Scope</td><td>3 graduate credits &nbsp;|&nbsp; 7-week hybrid intensive &nbsp;|&nbsp; Canvas LMS &nbsp;|&nbsp; 6 integrated ed-tech tools</td></tr>
+          <tr><td style="font-weight:500;">Learners</td><td>Graduate students in education: pre-service and in-service teachers, curriculum specialists</td></tr>
+          <tr><td style="font-weight:500;">Format</td><td>Asynchronous (Canvas) + 2 synchronous sessions (Weeks 1 and 7)</td></tr>
+          <tr><td style="font-weight:500;">Regulatory</td><td>Ontario AODA (2005); TRC Calls to Action 62&ndash;65; OCT professional standards; OCAP principles</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">The design problem</div>
+    <div class="card-body">
+      <p>UDL in Ontario postsecondary contexts defaults to a technicist accessibility compliance model. Institutions implement CAST guidelines primarily to satisfy AODA obligations, with minimal interrogation of whose epistemologies are served by LMS architecture, rubric conventions, and content representation defaults.</p>
+      <p>The course required a design that teaches UDL critically while modeling it structurally, and that prepares learners to make analogous design decisions in their own practice. Three subsidiary problems were articulated before solution design began:</p>
+      <ul style="padding-left:1.2rem;margin-top:0.5rem;font-size:0.87rem;">
+        <li style="margin-bottom:4px;">Standard UDL training evacuates race, Indigeneity, and colonialism from the accessibility conversation.</li>
+        <li style="margin-bottom:4px;">Ed-tech selection is typically driven by licensing agreements, not pedagogical or equity criteria.</li>
+        <li>Graduate assessment routinely privileges academic prose, creating credibility deficits for learners with oral, relational, or multimodal knowledge traditions.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="two-col">
+    <div class="card">
+      <div class="card-title">Theoretical architecture</div>
+      <div class="card-body">
+        <div class="dl-row"><div class="dl-key">CAST UDL 2.0</div><div class="dl-val">Scaffold for 7-week sequence; each principle receives a dedicated week and design deliverable</div></div>
+        <div class="dl-row"><div class="dl-key">Fricker</div><div class="dl-val">Testimonial and hermeneutical injustice as lens for LMS audit and rubric design</div></div>
+        <div class="dl-row"><div class="dl-key">Mignolo / Tuck &amp; Yang / Smith</div><div class="dl-val">Decolonial methodologies; OCAP principles for technology evaluation</div></div>
+        <div class="dl-row"><div class="dl-key">Bakhtin</div><div class="dl-val">Racialized heteroglossia frames multiple means of representation as plurivocal commitment</div></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">Technology integration</div>
+      <div class="card-body">
+        <div class="dl-row"><div class="dl-key">Canvas</div><div class="dl-val">Audited critically for WCAG 2.1 compliance and epistemic assumptions</div></div>
+        <div class="dl-row"><div class="dl-key">H5P</div><div class="dl-val">Interactive multimedia within Canvas; no external platform accounts</div></div>
+        <div class="dl-row"><div class="dl-key">Kaltura</div><div class="dl-val">Video + full captioning and transcript; AODA compliance</div></div>
+        <div class="dl-row"><div class="dl-key">VoiceThread</div><div class="dl-val">Threaded audio/video discussion; addresses oral knowledge deficit</div></div>
+        <div class="dl-row"><div class="dl-key">Flipgrid</div><div class="dl-val">Multimedia assessment submission; models alternative expression modes</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Key instructional design decisions</div>
+    <div class="card-body">
+      <div class="dl-row"><div class="dl-key">Scaffolded sequence</div><div class="dl-val">7 assessments with cumulative logic: each builds on the previous deliverable. The course models iterative design practice as its primary competency.</div></div>
+      <div class="dl-row"><div class="dl-key">UDL Disclosure</div><div class="dl-val">Self-audit documents exactly how the course applies each UDL principle to its own structure. Makes design visible, auditable, and models reflective documentation practice.</div></div>
+      <div class="dl-row"><div class="dl-key">Rubric architecture</div><div class="dl-val">Knowledge evaluated independently of expression mode. Accepts written, audio, video, and multimedia unless the outcome specifically requires written form.</div></div>
+      <div class="dl-row"><div class="dl-key">Extension as design</div><div class="dl-val">72-hour no-documentation extension documented as a UDL design decision, not an accommodation exception. Locates the problem in the design, not the learner.</div></div>
+      <div class="dl-row"><div class="dl-key">OCAP integration</div><div class="dl-val">Technology evaluation framework requires assessment against OCAP principles for Indigenous data sovereignty. Absent from standard ID curricula and LMS vendor evaluations.</div></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Canvas analytics workshop &mdash; second design sample</div>
+    <div class="card-body">
+      <p style="margin-bottom:0.75rem;">A complete asynchronous workshop package for instructional designers and academic developers. 5 modules, 3 hours total, self-directed. Mapped to the Ontario TLCP (Teaching-Learning Critical Pathway). Developed under Pantaleon Consulting, 2026.</p>
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr><th>Module</th><th>Core question</th><th>Est. time</th><th>TLCP phase</th></tr></thead>
+          <tbody>
+            <tr><td>1: Orientation</td><td>What does Canvas actually track?</td><td>30 min</td><td>Assessment</td></tr>
+            <tr><td>2: Reading the data</td><td>What is my course telling me?</td><td>45 min</td><td>Assessment / Instruction</td></tr>
+            <tr><td>3: Intervention design</td><td>What do I do with this information?</td><td>45 min</td><td>Instruction</td></tr>
+            <tr><td>4: Equity and ethics</td><td>What are the limits and risks of this data?</td><td>30 min</td><td>Learning</td></tr>
+            <tr><td>5: Monitoring routine</td><td>How do I sustain this practice?</td><td>20 min</td><td>Instruction / Learning</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ===== ASSESSMENT ===== -->
+<div id="assessment" class="section">
+<div class="wrap">
+  <div class="section-header">
+    <div class="section-title">Assessment instruments <span class="interview-tag">Q7 &mdash; using data to improve a course</span></div>
+    <div class="section-sub">Rubrics and marking schemes from teacher education and graduate contexts</div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Assessment design position</div>
+    <div class="card-body">
+      <p>AI-detection software is not a defensible assessment tool. The research record establishes that detection tools produce false positives correlated with non-native English writing, and the outputs they flag are not reliably distinguishable from human writing by trained readers.</p>
+      <div class="bq">Recalibrated assessment answers a different question: can this student demonstrate the specific intellectual competencies required at the upper tiers of Bloom's Taxonomy, in relation to their specific professional context, in a way that requires their own positioned judgment?</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Five AI-resistant assessment mechanisms</div>
+    <div class="card-body">
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr><th>Mechanism</th><th>Function</th></tr></thead>
+          <tbody>
+            <tr><td><strong style="font-weight:500;">Process portfolios</strong></td><td>Collect staged drafts, annotated AI logs, and revision memos. Assess the quality of the process, not only the product.</td></tr>
+            <tr><td><strong style="font-weight:500;">Oral accountability</strong></td><td>5-minute debrief or live Q&amp;A on submitted work. Students who cannot speak to their own work in real time have not fully owned their thinking.</td></tr>
+            <tr><td><strong style="font-weight:500;">Contextual specificity</strong></td><td>Require institutional documents, named students (anonymized), specific classroom events as primary evidence. Cannot be generated by AI.</td></tr>
+            <tr><td><strong style="font-weight:500;">Peer review with accountability</strong></td><td>Students submit peer review explaining their evaluative reasoning. Harder to delegate than the original assignment.</td></tr>
+            <tr><td><strong style="font-weight:500;">Reflective meta-commentary</strong></td><td>200&ndash;300 word section in each submission where students account for choices made in producing the work.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Rubric 3.A: higher-order critical analysis (criterion summary)</div>
+    <div class="card-body">
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr><th>Criterion</th><th>Excellent (4)</th><th>Proficient (3)</th><th>Insufficient (1)</th></tr></thead>
+          <tbody>
+            <tr><td>Contextual situatedness</td><td>All claims traceable to named documents, events, or interactions from the student's actual practice</td><td>Professional context present and relevant; some claims could be more precisely grounded</td><td>No meaningful connection to the student's specific professional context</td></tr>
+            <tr><td>Analytical depth</td><td>Identifies interacting causes; commands two+ theoretical frameworks as analytical tools; moves from description to structural diagnosis</td><td>Analysis moves beyond description; frameworks applied, not merely cited</td><td>Primarily descriptive; no causal reasoning; frameworks mentioned in passing</td></tr>
+            <tr><td>Evaluative judgment</td><td>Evaluates competing positions using explicit, justified criteria; recommendation argued against real constraints the student faces</td><td>Evaluation present and reasoned; position arrived at though justification could tighten</td><td>No evaluation; presents information without arriving at a judgment</td></tr>
+            <tr><td>Counter-evidence engagement</td><td>Actively seeks disconfirming evidence; argument demonstrably stronger for having been tested</td><td>Acknowledges some counter-evidence; engagement present but could be more sustained</td><td>No engagement with complicating evidence; argument self-confirming and untested</td></tr>
+            <tr><td>Use of course scholarship</td><td>Readings used as analytical tools; specific arguments applied, extended, or identified as limited</td><td>Readings present and relevant; connection between scholarship and analysis is clear</td><td>Readings absent, minimal, or incorrectly applied</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Data-driven course improvement: Charles Sturt University case</div>
+    <div class="card-body">
+      <p>At Charles Sturt, post-placement data from three sources (supervisor reports, student reflections, in-class observation notes) showed classroom management gaps were not a content problem but an assessment design problem. The assessment tested declarative knowledge, not applied judgment.</p>
+      <p>The redesign moved from written analysis to a case-based scenario with a decision-making component. The following cohort received substantially stronger supervisor ratings in targeted competencies. The revised assessment design was adopted by a colleague teaching a parallel subject.</p>
+      <div class="bq">This case is the primary answer to Q7: describe a time you used data to improve a course. Three-source data triangulation; gap diagnosed as assessment design failure, not curriculum or delivery; measurable cohort improvement in the targeted competency.</div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ===== CURRICULUM MAP ===== -->
+<div id="curriculum" class="section">
+<div class="wrap">
+  <div class="section-header">
+    <div class="section-title">Curriculum map <span class="interview-tag">Q2 &mdash; project management &nbsp;|&nbsp; Q5 &mdash; competing priorities</span></div>
+    <div class="section-sub">Outcomes-assessment-content alignment across EDUC 6420</div>
+  </div>
+
+  <div class="card" style="margin-bottom:1.25rem;">
+    <div class="card-title">Graduate learning outcomes by UDL principle</div>
+    <div class="outcome-grid">
+      <div class="outcome-card purple">
+        <div class="oc-title">Representation</div>
+        <div class="oc-sub">Epistemic access, LMS audit, whose knowledge is centred</div>
+      </div>
+      <div class="outcome-card teal">
+        <div class="oc-title">Action / expression</div>
+        <div class="oc-sub">Rubric design, multimodal submission, alternative expression</div>
+      </div>
+      <div class="outcome-card coral">
+        <div class="oc-title">Engagement</div>
+        <div class="oc-sub">OCAP, critical technology evaluation, community co-design</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">7-week assessment sequence (cumulative scaffolding logic)</div>
+    <div class="week-list" style="margin-bottom:0.75rem;">
+      <div class="week-card neutral">
+        <div><div class="week-num">Week 1</div></div>
+        <div><div class="week-title">Positionality reflection</div><div class="week-sub">Course orientation; epistemological framing</div></div>
+        <div class="week-weight" style="color:var(--ink3);">5%</div>
+      </div>
+      <div class="week-card purple">
+        <div><div class="week-num">Week 2</div></div>
+        <div><div class="week-title">LMS accessibility audit</div><div class="week-sub">Feeds directly into Week 3 brief</div></div>
+        <div class="week-weight" style="color:var(--purple-text);">15%</div>
+      </div>
+      <div class="week-card purple">
+        <div><div class="week-num">Week 3</div></div>
+        <div><div class="week-title">Representation design brief</div><div class="week-sub">Built from Week 2 audit data</div></div>
+        <div class="week-weight" style="color:var(--purple-text);">15%</div>
+      </div>
+      <div class="week-card teal">
+        <div><div class="week-num">Week 4</div></div>
+        <div><div class="week-title">Module draft + rubric</div><div class="week-sub">Object of Week 5 peer critique</div></div>
+        <div class="week-weight" style="color:var(--teal-text);">20%</div>
+      </div>
+      <div class="week-card teal">
+        <div><div class="week-num">Week 5</div></div>
+        <div><div class="week-title">Peer critique</div><div class="week-sub">Critiques Week 4 draft; assessed feedback practice</div></div>
+        <div class="week-weight" style="color:var(--teal-text);">10%</div>
+      </div>
+      <div class="week-card coral">
+        <div><div class="week-num">Week 6</div></div>
+        <div><div class="week-title">OCAP-integrated critical technology evaluation</div><div class="week-sub">Ownership, Control, Access, Possession applied to ed-tech</div></div>
+        <div class="week-weight" style="color:var(--coral-text);">5%</div>
+      </div>
+      <div class="week-card final">
+        <div><div class="week-num">Week 7</div></div>
+        <div><div class="week-title">Final module &mdash; integrates Weeks 2&ndash;6</div><div class="week-sub">Canvas-ready; all three UDL principles; UDL Disclosure included</div></div>
+        <div class="week-weight" style="color:var(--accent);">30%</div>
+      </div>
+    </div>
+    <div class="bq" style="margin-top:0;">The Week 2 audit becomes source material for Week 3. The Week 4 draft is the object of Week 5 critique. The Week 7 final module integrates all prior deliverables. Each assessment is both a standalone product and an input to the next. The course models iterative design practice as its primary deliverable.</div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">TLCP alignment: Canvas analytics workshop</div>
+    <div class="card-body">
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr><th>TLCP phase</th><th>Core question</th><th>Module</th><th>Analytics tool</th></tr></thead>
+          <tbody>
+            <tr><td>Assessment</td><td>What do we know about students' learning needs?</td><td>Modules 1&ndash;2</td><td>Course Grade tab, Weekly Online Activity, Students tab</td></tr>
+            <tr><td>Assessment</td><td>What evidence will we use to identify need?</td><td>Module 2 scenarios</td><td>Section filter, last participation sort, grade trajectory</td></tr>
+            <tr><td>Instruction</td><td>What strategies are responsive to identified need?</td><td>Module 3</td><td>Message Students Who, course redesign decision tree</td></tr>
+            <tr><td>Instruction</td><td>How do we design learning that addresses equity?</td><td>Module 4</td><td>OEE framework, policy recommendations</td></tr>
+            <tr><td>Learning</td><td>What did students learn as a result of adjustments?</td><td>Module 5</td><td>Weekly three-tab check, decision trigger calendar</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Project management evidence: FNTI VP Academic (Q5)</div>
+    <div class="card-body">
+      <p>As VP Academic at First Nations Technical Institute (2018&ndash;2019), held simultaneous responsibility for program oversight, faculty development, quality assurance across multiple certificates and degree programs, and external accreditation compliance with no project management infrastructure in place.</p>
+      <p>Response: introduced milestone-based tracking mapping each program through development, review, and approval stages with named owners and buffer dates. Bi-weekly check-ins with program leads. Risk flagged three weeks ahead of hard deadlines, not at the deadline. Triage by accreditation pressure versus absorb-delay. All external accreditation deadlines met that year. Faculty leads had better workload visibility; last-minute submissions reduced.</p>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ===== EDAII ===== -->
+<div id="edaii" class="section">
+<div class="wrap">
+  <div class="section-header">
+    <div class="section-title">EDAII design evidence <span class="interview-tag">Q4 &mdash; equity, diversity, accessibility, Indigenization</span></div>
+    <div class="section-sub">Structural equity in design decisions, OCAP, UDL Disclosure, OEE framework</div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Design position on EDAII</div>
+    <div class="card-body">
+      <div class="bq">EDAII cannot be an add-on layer applied after the course is designed. It has to be structural: in the learning outcomes, the assessment formats, the representation of knowledge sources, and the assumptions built into the course materials.</div>
+      <p style="margin-top:0.75rem;">Concretely: assessments are designed with multiple modalities. Reading lists are audited for epistemic representation. Content at FNTI and Six Nations was built with and through community partners as co-authorship, not consultation. Rubrics make evaluation criteria explicit and transparent, reducing bias and giving marginalized learners clarity rather than ambiguity.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">OEE framework applied to LMS analytics (Module 4 equity case)</div>
+    <div class="card-body">
+      <p style="margin-bottom:0.75rem;">The Onto-Ethico-Epistemological (OEE) framework, developed from Indigenous methodological traditions using the Medicine Wheel architecture, asks three questions of any knowledge system:</p>
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr><th>Dimension</th><th>Question</th><th>Applied to Canvas analytics</th></tr></thead>
+          <tbody>
+            <tr><td>Ontological</td><td>What does it recognize as real?</td><td>Course Analytics renders the student as a data subject: a collection of trackable behaviours. This is an ontological reduction. The student is a relational being whose engagement is distributed across family, community, land, and institution.</td></tr>
+            <tr><td>Ethical</td><td>What obligations does it carry?</td><td>Transparency (does the student know this data exists?), proportionality (is the action warranted by the data?), relational accountability (does the intervention strengthen or damage the instructor-student relationship?).</td></tr>
+            <tr><td>Epistemological</td><td>What does it count as knowledge?</td><td>Analytics embeds a behaviourist theory of learning. Incompatible with constructivist, relational, land-based, or oral-tradition pedagogical frameworks. A structural mismatch that must be named explicitly.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Student populations where analytics patterns are systematically misleading</div>
+    <div class="card-body">
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr><th>Population</th><th>Why standard patterns mislead</th><th>Designer response</th></tr></thead>
+          <tbody>
+            <tr><td>Students with print/visual disabilities</td><td>Screen reader navigation not captured; page views may be lower even with deep engagement</td><td>Check whether accessibility accommodations affect navigation paths in Canvas</td></tr>
+            <tr><td>Intermittent broadband (rural, remote, low-income)</td><td>Access gaps appear as disengagement; late-night spikes may reflect shared household bandwidth</td><td>Do not interpret access timing as motivation data</td></tr>
+            <tr><td>Students with caregiving responsibilities</td><td>Activity at unusual hours; submissions near midnight; page views clustered on weekends</td><td>Submission timing is not evidence of poor time management</td></tr>
+            <tr><td>Indigenous students in land-based or community learning</td><td>Community practicum and land-based components not captured; student may appear inactive during most educationally significant weeks</td><td>Supplement analytics with qualitative check-ins during practicum periods</td></tr>
+            <tr><td>International students navigating language and system transition</td><td>High page views, low participation; may view pages many times without posting</td><td>High access with low participation may indicate language processing, not disengagement</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">OCAP principles in technology evaluation (EDUC 6420, Week 6)</div>
+    <div class="card-body">
+      <p>The critical technology evaluation framework in Week 6 requires graduates to assess any educational technology against OCAP principles (Ownership, Control, Access, Possession) for Indigenous data sovereignty. This criterion is operationally absent from standard instructional design curricula and from most LMS vendor evaluations in Ontario. Its inclusion positions graduates to make defensible technology recommendations in Indigenous education contexts including midwifery programs, community colleges, and band-operated schools.</p>
+      <div style="margin-top:0.75rem;">
+        <span class="pill pill-coral">Ownership</span>
+        <span class="pill pill-coral">Control</span>
+        <span class="pill pill-coral">Access</span>
+        <span class="pill pill-coral">Possession</span>
+        <span class="pill pill-gray">WCAG 2.1</span>
+        <span class="pill pill-gray">AODA compliance</span>
+        <span class="pill pill-gray">TRC Calls 62&ndash;65</span>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ===== WRITING ===== -->
+<div id="writing" class="section">
+<div class="wrap">
+  <div class="section-header">
+    <div class="section-title">Writing sample <span class="interview-tag">Q4 &mdash; analytical depth</span></div>
+    <div class="section-sub">Published practitioner work and academic manuscript record</div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Primary writing sample: EdCan Network (2026)</div>
+    <div class="card-body">
+      <div class="dl-row"><div class="dl-key">Title</div><div class="dl-val">"What Does It Cost an Indigenous Educator to Teach Science?"</div></div>
+      <div class="dl-row"><div class="dl-key">Publication</div><div class="dl-val">EdCan Network, 2026</div></div>
+      <div class="dl-row"><div class="dl-key">Why this piece</div><div class="dl-val">Practitioner-facing. Short. Demonstrates writing quality, audience awareness across registers, and analytical depth in a non-specialist format. Accessible in 3&ndash;4 minutes of reading.</div></div>
+      <div class="dl-row"><div class="dl-key">Themes</div><div class="dl-val">Racialized professional body in science education; epistemic cost of teaching across colonial frameworks; personal positional knowledge integrated into analysis.</div></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Peer-reviewed manuscript record (selected)</div>
+    <div class="card-body">
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr><th>Manuscript</th><th>Target / status</th><th>Core argument</th></tr></thead>
+          <tbody>
+            <tr><td>Racialized Heteroglossia and the Postcolonial Professional Body</td><td><em>AlterNative</em> (SAGE), under revision &mdash; MS ID ALN-OM-26-0222</td><td>Extends Bakhtin through Mignolo and Fanon; racialized diglossia in colonial professional contexts</td></tr>
+            <tr><td>Five Years On: Indigenous Research Sovereignty in Canadian Funding Governance</td><td>IIPJ / CJIS, multiple drafts</td><td>Inclusion versus jurisdictional transfer in post-UNDRIP Canadian research funding</td></tr>
+            <tr><td>UDL critique for decolonizing pedagogy</td><td><em>Canadian Journal of Education</em>, in preparation</td><td>UDL is insufficient for decolonizing pedagogy; OEE framework as alternative design architecture</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Publisher record</div>
+    <div class="card-body">
+      <p style="margin-bottom:0.65rem;">Established publication record in science education, decolonial curriculum, Indigenous education governance, and autoethnographic methodology.</p>
+      <div>
+        <span class="pill pill-info">Palgrave</span>
+        <span class="pill pill-info">Springer</span>
+        <span class="pill pill-info">Peter Lang</span>
+        <span class="pill pill-teal">EdCan Network</span>
+        <span class="pill">AlterNative / SAGE</span>
+        <span class="pill">IIPJ</span>
+        <span class="pill">Canadian Journal of Education</span>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ===== INTERVIEW INDEX ===== -->
+<div id="interview" class="section">
+<div class="wrap">
+  <div class="section-header">
+    <div class="section-title">Interview cross-reference index</div>
+    <div class="section-sub">Maps each anticipated panel question to the portfolio artifact that answers it</div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Question-to-artifact map</div>
+    <div class="card-body">
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr><th>Question</th><th>Primary artifact</th><th>Tab</th></tr></thead>
+          <tbody>
+            <tr><td>Q1: Tell us about yourself</td><td>Career trajectory table; positioning statement</td><td>Profile</td></tr>
+            <tr><td>Q2: End-to-end course/curriculum project</td><td>EDUC 6420 full case study; Charles Sturt subject coordination</td><td>Course Design; Curriculum Map</td></tr>
+            <tr><td>Q3: Collaborating with a subject matter expert</td><td>NSERC Indigenous STEM project at Queen's; co-design process narrative</td><td>Profile; Course Design</td></tr>
+            <tr><td>Q4: EDAII in instructional design practice</td><td>OEE framework; OCAP integration; multimodal rubrics; UDL Disclosure</td><td>EDAII</td></tr>
+            <tr><td>Q5: Managing competing priorities</td><td>FNTI VP Academic accreditation management case</td><td>Curriculum Map</td></tr>
+            <tr><td>Q6: Resistant faculty and new technologies</td><td>No dedicated artifact; use Canvas Analytics workshop framing and trust-over-compliance approach</td><td>Course Design (workshop logic)</td></tr>
+            <tr><td>Q7: Using data to improve a course</td><td>Charles Sturt practicum redesign: three-source data, assessment redesign, measurable cohort improvement</td><td>Assessment</td></tr>
+            <tr><td>Q8: Copyright compliance</td><td>No artifact needed; openly licensed resources first, copyright librarian liaison, build review into timeline</td><td>&mdash;</td></tr>
+            <tr><td>Q9: Why Continuing Teacher Education?</td><td>No artifact needed; expert-practitioner learner profile; underinvested intersection of teacher professional learning and online design</td><td>&mdash;</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Technology question: prepared framing</div>
+    <div class="card-body">
+      <div class="bq">Lead immediately with: Queen's uses Brightspace/D2L. You have used it. Do not wait for them to ask. Then acknowledge the Articulate gap cleanly, state the learning commitment, and pivot to what you bring.</div>
+      <p style="margin-top:0.75rem;">Tools with demonstrated experience: Canvas (designer-level), Brightspace/D2L (delivery and learner-facing), Blackboard (delivery), H5P, Kaltura, VoiceThread, Flipgrid, Padlet. Tools in active learning: Articulate 360, Creator+.</p>
+    </div>
+  </div>
+
+  <div class="q-card">
+    <div class="q-label">Q1</div>
+    <div class="q-text">Tell us about yourself and why you are applying for this role.</div>
+    <div class="q-ref">Opening question, not STAR. Under 90 seconds. Structure: current work, relevant experience, specific fit for this role and this unit. Lead with independent consultant and researcher, then Queen's prior appointment, then the specific draw of Continuing Teacher Education as the intersection of instructional design and teacher professional learning.</div>
+  </div>
+  <div class="q-card">
+    <div class="q-label">Q2</div>
+    <div class="q-text">Describe a time you managed a course or curriculum development project from start to finish.</div>
+    <div class="q-ref"><strong style="font-weight:500;">Use: Charles Sturt University (2011&ndash;2015).</strong> S: responsible for designing and coordinating multiple subjects in the School of Teacher Education. T: design from scratch, outcomes through assessment through delivery, across multiple cohorts. A: backward design from NSW accreditation framework; practicum coordinator alignment; rubrics and lecturer guides for multi-site consistency. R: Academic Excellence Award 2014; practicum coordination model adopted beyond own subjects.</div>
+  </div>
+  <div class="q-card">
+    <div class="q-label">Q3</div>
+    <div class="q-text">Give an example of collaborating with a subject matter expert to develop a course or learning resource.</div>
+    <div class="q-ref"><strong style="font-weight:500;">Use: NSERC Indigenous STEM project at Queen's (2019&ndash;2021).</strong> S: curriculum integrating Indigenous worldviews with engineering content. T: engineering faculty had deep technical knowledge but limited EDAII experience. A: co-design process not handoff; curriculum framework first; faculty design conversations on threshold concepts; First Nations community partners and Elders reviewed modules before finalizing. R: faculty could deliver with confidence; community partners endorsed as authentic; lasting effect on Engineering faculty approach to community partnerships.</div>
+  </div>
+  <div class="q-card">
+    <div class="q-label">Q4</div>
+    <div class="q-text">How do you incorporate equity, diversity, accessibility, inclusion, and Indigenization into your instructional design practice?</div>
+    <div class="q-ref">Do not give a theoretical answer. Ground it in design decisions. Multiple modalities in assessment. Reading lists audited for epistemic representation. At FNTI and Six Nations, content built through community co-authorship, not consultation. Rubrics make criteria explicit and transparent, reducing bias. This is default design practice, not a special layer.</div>
+  </div>
+  <div class="q-card">
+    <div class="q-label">Q5</div>
+    <div class="q-text">Describe a time you had to manage competing priorities or timelines across multiple projects.</div>
+    <div class="q-ref"><strong style="font-weight:500;">Use: FNTI VP Academic (2018&ndash;2019).</strong> No project management infrastructure. Introduced milestone-based tracking with named owners, buffer dates, and bi-weekly check-ins. Triage by accreditation pressure. All external deadlines met. Faculty had better visibility; last-minute crises reduced; submission quality improved.</div>
+  </div>
+  <div class="q-card">
+    <div class="q-label">Q6</div>
+    <div class="q-text">How would you approach training a faculty member who is resistant to adopting new learning technologies?</div>
+    <div class="q-ref">Start with the problem they are actually trying to solve, not the technology. Offer minimal viable version. Demonstrate rather than instruct. Connect with a peer who has had a positive experience. Be honest: if the technology does not genuinely improve student experience, say so. Trust is more valuable than compliance.</div>
+  </div>
+  <div class="q-card">
+    <div class="q-label">Q7</div>
+    <div class="q-text">Describe a time you had to collect and use data to evaluate or improve a course.</div>
+    <div class="q-ref"><strong style="font-weight:500;">Use: Charles Sturt Professional Practice redesign.</strong> Three data sources: supervisor reports, student reflections, in-class observation notes. Mapped against learning outcomes to locate the gap. Gap was in assessment design, not content. Redesigned from written analysis to case-based scenario. Following cohort received substantially stronger supervisor ratings in targeted competencies. Revised design adopted by parallel-subject colleague.</div>
+  </div>
+
+  <div class="card" style="margin-top:1.25rem;">
+    <div class="card-title">Questions to ask the panel</div>
+    <div class="card-body">
+      <ol style="padding-left:1.2rem;font-size:0.87rem;line-height:2;">
+        <li>What does the course development pipeline currently look like in terms of volume and timelines? How many courses are typically in development at any one time?</li>
+        <li>What LMS and authoring tools does the team currently use, and is there capacity for structured onboarding in those tools for someone new?</li>
+        <li>How does this role interact with faculty developing courses? Primarily a consultant, a co-designer, or both?</li>
+        <li>What does success look like in the first six months for someone in this position?</li>
+        <li>Is there an existing EDAII framework that guides course development in this unit, or is that something this role would help develop?</li>
+      </ol>
+    </div>
+  </div>
+</div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <strong>Umar Pantaleon Umangay</strong> &nbsp;&mdash;&nbsp; Pantaleon Consulting &nbsp;&mdash;&nbsp; umar.umangay@alumni.utoronto.ca &nbsp;&mdash;&nbsp; Amherstview, Ontario, Canada<br>
+    <span style="margin-top:4px;display:block;">Competition J0326-0741 &nbsp;&mdash;&nbsp; Instructional Designer, Continuing Teacher Education, Queen's University &nbsp;&mdash;&nbsp; June 11, 2026</span>
+  </div>
+</footer>
+
+<script>
+function show(id){
+  document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
+  document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  const map={profile:0,course:1,assessment:2,curriculum:3,edaii:4,writing:5,interview:6};
+  document.querySelectorAll('.nav-btn')[map[id]].classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+</script>
+</body>
+</html>
